@@ -1,5 +1,11 @@
 {
   "name": "startlake",
-  "version": "1.5",
-  "manifest_version": 2
+  "version": "1.5.2",
+  "manifest_version": 2,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": { "id": "{09eed103-4b33-46cd-9ec6-87d24ee1b4a9}" }
+  }
 }
