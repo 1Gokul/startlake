@@ -12,12 +12,11 @@ export const getTime = () => {
 
 export const getDate = () => {
   const date = new Date();
-  const [month, dateString] = [date.getMonth(), date.getDate()];
 
   document.getElementById("date").innerText = `${new Intl.DateTimeFormat(
     "en-IN",
     { month: "short" }
-  ).format(month)} ${dateString}`;
+  ).format(date)} ${date.getDate()}`;
   document.getElementById("day").innerText = date.toLocaleDateString("en-IN", {
     weekday: "long",
   });
