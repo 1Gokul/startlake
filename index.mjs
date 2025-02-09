@@ -4,8 +4,8 @@ export const getTime = () => {
   const date = new Date();
   const [hour, minutes] = [date.getHours(), date.getMinutes()];
 
-  document.getElementById("hour").innerHTML = hour.toString().padStart(2, "0");
-  document.getElementById("minute").innerHTML = minutes
+  document.getElementById("hour").innerText = hour.toString().padStart(2, "0");
+  document.getElementById("minute").innerText = minutes
     .toString()
     .padStart(2, "0");
 };
@@ -14,11 +14,11 @@ export const getDate = () => {
   const date = new Date();
   const [month, dateString] = [date.getMonth(), date.getDate()];
 
-  document.getElementById("date").innerHTML = `${new Intl.DateTimeFormat(
+  document.getElementById("date").innerText = `${new Intl.DateTimeFormat(
     "en-IN",
     { month: "short" }
   ).format(month)} ${dateString}`;
-  document.getElementById("day").innerHTML = date.toLocaleDateString("en-IN", {
+  document.getElementById("day").innerText = date.toLocaleDateString("en-IN", {
     weekday: "long",
   });
 };
@@ -35,13 +35,13 @@ export const getWeather = async () => {
     const json = await response.json();
 
     if (json?.main) {
-      document.getElementById("temp").innerHTML = `${Math.round(
+      document.getElementById("temp").innerText = `${Math.round(
         json?.main?.temp ?? 0
       )}°`;
     }
 
     if (json?.weather?.length) {
-      document.getElementById("weather").innerHTML =
+      document.getElementById("weather").innerText =
         json.weather[0]?.description ?? "unknown";
     }
   } catch (error) {

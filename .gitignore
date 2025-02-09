@@ -1,3 +1,7 @@
 web-ext-artifacts/
 
+
 config.js
+
+.amo-upload-uuid
+.web-extension-id
