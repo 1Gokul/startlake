@@ -1,4 +1,4 @@
-import { appid, latitude, longitude } from "./config.js";
+import { appid, clientId, latitude, longitude } from "./config.js";
 
 export const getTime = () => {
   const date = new Date();
@@ -45,6 +45,33 @@ export const getWeather = async () => {
         json.weather[0]?.description ?? "unknown";
     }
   } catch (error) {
+    console.error(error.message);
+  }
+};
+
+export const getImage = async () => {
+  try {
+    const params = new URLSearchParams({
+      query: "landscape",
+      orientation: "landscape",
+      client_id: clientId,
+    });
+
+    const response = await fetch(
+      `https://api.unsplash.com/photos/random?${params}`
+    );
+    if (!response.ok) {
+      document.getElementById("main-image").src = "lake.jpg";
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+
+    if (json?.urls?.full) {
+      document.getElementById("main-image").src = json.urls.full;
+    }
+  } catch (error) {
+    document.getElementById("main-image").src = "lake.jpg";
     console.error(error.message);
   }
 };

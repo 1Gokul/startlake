@@ -9,7 +9,7 @@
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=" />
   </head>
   <body>
-    <img src="lake.jpg" alt="lake" />
+    <img id="main-image" alt="lake" />
     <div class="row">
       <div class="left-container">
         <div class="time-container">
@@ -72,7 +72,7 @@
       </div>
     </div>
     <script type="module">
-      import { getTime, getDate, getWeather } from "./index.mjs";
+      import { getTime, getDate, getWeather, getImage } from "./index.mjs";
 
       getTime();
       setInterval(getTime, 1000);
@@ -82,6 +82,8 @@
 
       getWeather();
       setInterval(getWeather, 180000);
+
+      getImage();
     </script>
   </body>
 </html>
