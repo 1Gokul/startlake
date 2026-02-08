@@ -42,7 +42,7 @@ export const getDate = () => {
 export const getWeather = async () => {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${appid}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${appid}&units=metric`,
     );
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
@@ -73,7 +73,7 @@ export const getImage = async () => {
     const randomImageIndex = Math.floor(Math.random() * numberOfImages);
     const imageElement = document.getElementById("main-image");
 
-    if (randomImageIndex && imageElement) {
+    if (imageElement) {
       imageElement.src = `./img/${randomImageIndex}.jpeg`;
     }
   } catch (error) {
