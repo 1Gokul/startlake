@@ -2,13 +2,12 @@
 
 fork of refact0r/startlake 
 
-![image](https://github.com/user-attachments/assets/3d84963f-e5e9-4323-8faa-819e651ce3a7)
+![image](https://github.com/user-attachments/assets/449bf31f-139f-4a64-8cc9-672f813cb1b4)
 
-The `config.js` file has 4 exports:
- 
+The `config.js` file has 3 exports for OpenWeatherMap:
 
 ```ts
-appid: string, // For OpenWeatherMap
-latitude: string, // For OpenWeatherMap
-longitude: string, // For OpenWeatherMap
+appid: string,
+latitude: string, 
+longitude: string,
 ```
